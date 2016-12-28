@@ -1,0 +1,16 @@
+{
+  "name": "miniEComApp",
+  "version": "0.0.0",
+  "description": "miniEComApp",
+  "main": "app.js",
+  "author": {
+    "name": "chandan.kumar2",
+    "email": ""
+  },
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}
