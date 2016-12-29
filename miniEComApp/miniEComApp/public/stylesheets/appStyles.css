@@ -1,0 +1,8 @@
+#productCategoryForm .input-group-addon {
+    min-width:150px;
+    text-align:left;
+}
+
+#productCategoryForm .form-buttons{
+    float: right
+}
