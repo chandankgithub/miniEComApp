@@ -1,0 +1,30 @@
+<% include layout%>
+    <script src="../../javascripts/product/controller/productController.js"></script>
+
+    <div class="panel panel-primary" ng-controller="productCategoryListingController">
+        <div class="panel-heading">
+            <h3 class="panel-title">Product Categories</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-stripped table-hover">
+                <thead>
+                    <td> Name </td>
+                    <td> Description </td>
+                    <td> Action </td>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="category in productCategories">
+                        <td>
+                            {{category.Name}}
+                        </td>
+                        <td>
+                            {{category.Description}}
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
