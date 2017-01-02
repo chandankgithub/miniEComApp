@@ -16,7 +16,7 @@ var productRoutes = function(app){
             requestType:'GET',
             requestUrl:'/Products',
             callback: function(request, response){
-                response.render('products', {'title': 'Products'});
+                response.render('productListing', {'title': 'Products'});
             }
         });
 

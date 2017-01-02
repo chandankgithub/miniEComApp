@@ -1,5 +1,5 @@
-angular.module('productModule' ,[])
-.controller('productController', ['$scope','$http', function($scope, $http){
+var productModule = angular.module('productModule' ,[])
+var productCategoryController = function($scope,$http){
     $scope.new  = {
        productCategory:{
            Name:'',
@@ -20,10 +20,29 @@ angular.module('productModule' ,[])
     var addFailureCallback = function(error){
         console.log(error);
     }
-}])
-.controller('productCategoryListingController', ['$scope','$http', function($scope, $http){
+};
+
+ var productCategoryListingController = function($scope, $http){
     $scope.productCategories=[];
     // $scope.productCategories.push(
     //     { Name: 'My Category', Description:'My Description'}
     //     );
-     }])
+     };
+
+var productListingController = function($scope, $http){
+    // $scope.products = [{
+    //     Name:'Chandan Kumar',
+    //     Description: 'My Description'
+    // }]
+
+}
+
+//Dependency Injection to Controller
+productCategoryController.$inject = ['$scope','$http'];
+productCategoryListingController.$inject = ['$scope','$http'];
+productListingController.$inject = ['$scope','$http'];
+
+//Controller declarations
+productModule.controller('productCategoryController', productCategoryController)
+             .controller('productCategoryListingController', productCategoryListingController)
+             .controller('productListingController', productListingController);
