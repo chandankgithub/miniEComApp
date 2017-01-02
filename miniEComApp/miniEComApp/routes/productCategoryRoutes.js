@@ -38,6 +38,7 @@
                         'Name' : request.body.Name,
                         'Description': request.body.Description
                     }));
+                //response.redirect('/Categories');
             }
         });
     }

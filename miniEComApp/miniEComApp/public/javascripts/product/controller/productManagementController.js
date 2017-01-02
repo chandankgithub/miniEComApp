@@ -14,8 +14,8 @@ var productCategoryController = function($scope,$http){
     }
     
     var addSuccessCallback = function(result){
-       $scope.productCategories.push(result.data);
-       $http.get('/Categories')
+       //$scope.productCategories.push(result.data);
+       window.location = '/Categories';
     }
 
     var addFailureCallback = function(error){
@@ -23,12 +23,10 @@ var productCategoryController = function($scope,$http){
     }
 };
 
- var productCategoryListingController = function($scope, $http){
-    $scope.productCategories=[];
-    // $scope.productCategories.push(
-    //     { Name: 'My Category', Description:'My Description'}
-    //     );
-     };
+ var productCategoryListingController = function($scope, $http, productService){
+    $scope.productCategories=productService.productCategories;
+       
+}
 
 
 var productController = function($scope, $http){
@@ -55,10 +53,6 @@ var productController = function($scope, $http){
     }
 }
 var productListingController = function($scope, $http){
-    // $scope.products = [{
-    //     Name:'Chandan Kumar',
-    //     Description: 'My Description'
-    // }]
 
 }
 
@@ -66,7 +60,8 @@ var productListingController = function($scope, $http){
 
 //Dependency Injection to Controller
 productCategoryController.$inject = ['$scope','$http'];
-productCategoryListingController.$inject = ['$scope','$http'];
+productCategoryListingController.$inject = ['$scope','$http','productService'];
+
 productController.$inject = ['$scope','$http'];
 productListingController.$inject = ['$scope','$http'];
 
