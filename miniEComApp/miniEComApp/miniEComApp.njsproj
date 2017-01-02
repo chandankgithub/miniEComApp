@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="routes\index.js" />
+    <Compile Include="routes\ProductCategory\productCategoryRoutes.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="public\javascripts\bootstrap.js" />
@@ -71,6 +72,7 @@
     <Folder Include="public\javascripts\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
+    <Folder Include="routes\ProductCategory\" />
     <Folder Include="views\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />

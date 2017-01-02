@@ -1,4 +1,5 @@
-var productModule = angular.module('productModule' ,[])
+var productModule = angular.module('productModule' ,[]);
+
 var productCategoryController = function($scope,$http){
     $scope.new  = {
        productCategory:{
@@ -29,6 +30,30 @@ var productCategoryController = function($scope,$http){
     //     );
      };
 
+
+var productController = function($scope, $http){
+    
+    var self = this;
+
+    self.new ={
+        product:{
+            name: '',
+            description: ''
+        }
+        
+    }
+    $scope.addProduct = function(){
+
+        $http.post('/Products/Edit/PostData', self.new.product).then(self.addSuccessCallback,self.addFailureCallback);
+    }
+    self.addSuccessCallback = function(result){
+        console.log(result.data);
+    }
+
+    self.addFailureCallback = function(error){
+        console.log(error);
+    }
+}
 var productListingController = function($scope, $http){
     // $scope.products = [{
     //     Name:'Chandan Kumar',
@@ -37,12 +62,16 @@ var productListingController = function($scope, $http){
 
 }
 
+
+
 //Dependency Injection to Controller
 productCategoryController.$inject = ['$scope','$http'];
 productCategoryListingController.$inject = ['$scope','$http'];
+productController.$inject = ['$scope','$http'];
 productListingController.$inject = ['$scope','$http'];
 
 //Controller declarations
 productModule.controller('productCategoryController', productCategoryController)
              .controller('productCategoryListingController', productCategoryListingController)
+             .controller('productController', productController)
              .controller('productListingController', productListingController);

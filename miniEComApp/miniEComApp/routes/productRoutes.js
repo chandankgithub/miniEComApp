@@ -27,6 +27,19 @@ var productRoutes = function(app){
                 response.render('productEdit', {'title': 'Product Add-Edit'});
             }
         });
+
+         self.routeCollection.push({
+            requestType:'POST',
+            requestUrl:'/Products/Edit/PostData',
+            callback: function(request, response){
+                 console.log(request.body);
+                return response.send(JSON.stringify(
+                    {
+                        'Name' : request.body.Name,
+                        'Description': request.body.Description
+                    }));
+            }
+        });
     };
 
     self.processRoutes = function(){
