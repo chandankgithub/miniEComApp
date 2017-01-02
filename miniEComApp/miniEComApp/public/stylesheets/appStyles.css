@@ -6,3 +6,12 @@
 #productCategoryForm .form-buttons{
     float: right
 }
+
+#productForm .input-group-addon {
+    min-width:150px;
+    text-align:left;
+}
+
+#productForm .form-buttons{
+    float: right
+}
