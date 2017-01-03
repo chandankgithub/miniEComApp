@@ -23,6 +23,16 @@ var productCategoryRoutes = function (app) {
                 productCategoryController.getCategories(request,response);
             }
         });
+
+        self.routeCollection.push({
+            requestUrl: '/CategoryList',
+            requestType: 'GET',
+            callback: function (request, response){
+            //  response.render(productModuleRootPath + 'productCategoryListing', {title: 'Product Category'})
+                productCategoryController.getCategoryList(request,response);
+            }
+        });
+
         self.routeCollection.push({
             requestUrl: '/Categories/Add',
             requestType: 'GET',

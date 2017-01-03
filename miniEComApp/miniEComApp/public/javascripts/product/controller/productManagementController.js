@@ -24,9 +24,15 @@ var productCategoryController = function($scope,$http){
 };
 
  var productCategoryListingController = function($scope, $http, productService){
-     var productCategories = productService.getProductCategories();
+     var productCategories = productService.getProductCategoryMeta();
     $scope.productCategories=productService.productCategories;
        
+}
+
+var productCategoryGridController = function($scope, $http, productService){
+    var productCategories = productService.getProductCategoryData();
+    $scope.productCategories=productService.productCategories;
+
 }
 
 
@@ -62,6 +68,7 @@ var productListingController = function($scope, $http){
 //Dependency Injection to Controller
 productCategoryController.$inject = ['$scope','$http'];
 productCategoryListingController.$inject = ['$scope','$http','productService'];
+productCategoryGridController.$inject = ['$scope','$http','productService'];
 
 productController.$inject = ['$scope','$http'];
 productListingController.$inject = ['$scope','$http'];
@@ -69,5 +76,6 @@ productListingController.$inject = ['$scope','$http'];
 //Controller declarations
 productModule.controller('productCategoryController', productCategoryController)
              .controller('productCategoryListingController', productCategoryListingController)
+             .controller('productCategoryGridController', productCategoryGridController)
              .controller('productController', productController)
              .controller('productListingController', productListingController);

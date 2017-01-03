@@ -1,0 +1,22 @@
+<div ng-controller="productCategoryGridController">
+    <table class="table table-stripped table-hover">
+        <thead>
+            <td> Name </td>
+            <td> Description </td>
+            <td> Action </td>
+        </thead>
+        <tbody>
+            <tr ng-repeat="category in productCategories">
+                <td>
+                    {{category.Name}}
+                </td>
+                <td>
+                    {{category.Description}}
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

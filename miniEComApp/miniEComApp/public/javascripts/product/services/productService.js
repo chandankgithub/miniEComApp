@@ -4,8 +4,17 @@ productModule.factory('productService', ['$http',function($http) {
     return {
        productCategories: productCategories,
 
-       getProductCategories: function(){
+       getProductCategoryMeta: function(){
            $http.get('/Categories').then(function(result){
+               
+           }).catch(function(error){
+                console.log(error);
+           });
+       },
+
+       getProductCategoryData: function(){
+           $http.get('/CategoryList').then(function(result){
+               debugger;
                console.log(result.data);
            }).catch(function(error){
                 console.log(error);

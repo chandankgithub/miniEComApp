@@ -4,8 +4,16 @@ const productModuleRootPath = "admin/product/"
 module.exports={
 
     getCategories:function(request, response){
-        var productCategories = productCategoryService.getCategories();
-        console.log(productCategories);
-        response.render(productModuleRootPath + 'productCategoryListing', {productCategories: productCategories});
+        
+        response.render(productModuleRootPath + 'productCategoryListing', {title:'Product Categories'});
+    },
+
+    getCategoryList: function(request, response){
+        var prodCategories = productCategoryService.getCategories();
+        console.log(prodCategories);
+        //response.json(prodCategories);
+        //response.setHeader('Content-Type', 'application/json');
+        response.json({prodCategories: prodCategories}); 
+        
     }
 }
