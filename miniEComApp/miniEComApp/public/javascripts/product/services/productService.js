@@ -12,10 +12,10 @@ productModule.factory('productService', ['$http',function($http) {
            });
        },
 
-       getProductCategoryData: function(){
+       getProductCategoryData: function(callback){
            $http.get('/CategoryList').then(function(result){
                debugger;
-               console.log(result.data);
+               callback(result.data.productCategories);
            }).catch(function(error){
                 console.log(error);
            });

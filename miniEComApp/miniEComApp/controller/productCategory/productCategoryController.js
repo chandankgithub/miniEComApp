@@ -1,6 +1,8 @@
 var productCategoryService = require('../../services/productCategoryService.js');
 
-const productModuleRootPath = "admin/product/"
+const productModuleRootPath = "admin/product/";
+
+
 module.exports={
 
     getCategories:function(request, response){
@@ -9,11 +11,9 @@ module.exports={
     },
 
     getCategoryList: function(request, response){
-        var prodCategories = productCategoryService.getCategories();
-        console.log(prodCategories);
-        //response.json(prodCategories);
-        //response.setHeader('Content-Type', 'application/json');
-        response.json({prodCategories: prodCategories}); 
-        
+        productCategoryService.getCategories(function(recordset){
+            response.json({productCategories: recordset});
+        });
     }
 }
+

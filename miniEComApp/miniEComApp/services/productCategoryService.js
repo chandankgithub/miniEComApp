@@ -2,7 +2,7 @@ var productRepo = require('../dal/productRepository.js');
 
 module.exports = {
 
-    getCategories: function(){
-        productRepo.getProductCategories();
+    getCategories: function(successCallback){
+        productRepo.getProductCategories(successCallback);
     }
 }

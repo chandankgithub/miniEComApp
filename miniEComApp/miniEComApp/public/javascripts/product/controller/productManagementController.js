@@ -30,8 +30,11 @@ var productCategoryController = function($scope,$http){
 }
 
 var productCategoryGridController = function($scope, $http, productService){
-    var productCategories = productService.getProductCategoryData();
-    $scope.productCategories=productService.productCategories;
+    debugger;
+    var productCategories = productService.getProductCategoryData(function(categories){
+        $scope.productCategories = categories;
+    });
+    //$scope.productCategories=productService.productCategories;
 
 }
 
