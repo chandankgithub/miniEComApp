@@ -1,5 +1,6 @@
-﻿var productCategoryRoutes = function (app) {
-//function productCategoryRoutes(app) {
+﻿var productCategoryController = require('../controller/productCategory/productCategoryController.js');
+
+var productCategoryRoutes = function (app) {
     
     const productModuleRootPath = "admin/product/"
     var self = this;
@@ -18,7 +19,8 @@
             requestUrl: '/Categories',
             requestType: 'GET',
             callback: function (request, response){
-             response.render(productModuleRootPath + 'productCategoryListing', {title: 'Product Category'})
+            //  response.render(productModuleRootPath + 'productCategoryListing', {title: 'Product Category'})
+                productCategoryController.getCategories(request,response);
             }
         });
         self.routeCollection.push({

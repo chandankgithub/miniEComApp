@@ -24,6 +24,7 @@ var productCategoryController = function($scope,$http){
 };
 
  var productCategoryListingController = function($scope, $http, productService){
+     var productCategories = productService.getProductCategories();
     $scope.productCategories=productService.productCategories;
        
 }
