@@ -1,6 +1,7 @@
 ﻿var productCategoryRoutes = function (app) {
 //function productCategoryRoutes(app) {
     
+    const productModuleRootPath = "admin/product/"
     var self = this;
     self.app = app
     self.routeCollection = [];
@@ -17,14 +18,14 @@
             requestUrl: '/Categories',
             requestType: 'GET',
             callback: function (request, response){
-             response.render('productCategoryListing', {title: 'Product Category'})
+             response.render(productModuleRootPath + 'productCategoryListing', {title: 'Product Category'})
             }
         });
         self.routeCollection.push({
             requestUrl: '/Categories/Add',
             requestType: 'GET',
             callback: function (request, response) {
-                response.render('addEditProductCategory', { title: 'Add Product Category' })
+                response.render(productModuleRootPath + 'addEditProductCategory', { title: 'Add Product Category' })
             }
         });
          self.routeCollection.push({
