@@ -44,14 +44,15 @@ var productCategoryRoutes = function (app) {
             requestUrl: '/Categories/Add/PostData',
             requestType: 'POST',
             callback: function (request, response) {
-                //response.render('addEditProductCategory', { title: 'Add Product Category' })
-                console.log(request.body);
-                return response.send(JSON.stringify(
-                    {
-                        'Name' : request.body.Name,
-                        'Description': request.body.Description
-                    }));
-                //response.redirect('/Categories');
+                // //response.render('addEditProductCategory', { title: 'Add Product Category' })
+                // console.log(request.body);
+                // return response.send(JSON.stringify(
+                //     {
+                //         'Name' : request.body.Name,
+                //         'Description': request.body.Description
+                //     }));
+                // //response.redirect('/Categories');
+                productCategoryController.addCategory(request,response);
             }
         });
     }

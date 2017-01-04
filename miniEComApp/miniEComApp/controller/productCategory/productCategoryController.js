@@ -14,6 +14,9 @@ module.exports={
         productCategoryService.getCategories(function(recordset){
             response.json({productCategories: recordset});
         });
+    },
+    addCategory: function(request,response){
+        
     }
 }
 

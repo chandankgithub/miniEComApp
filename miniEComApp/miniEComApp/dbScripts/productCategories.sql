@@ -30,4 +30,34 @@ GO
 SET ANSI_PADDING OFF
 GO
 
+USE [miniEcom]
+GO
+
+/****** Object:  StoredProcedure [dbo].[usp_addProductCategory]    Script Date: 04-01-2017 15:44:27 ******/
+DROP PROCEDURE [dbo].[usp_addProductCategory]
+GO
+
+/****** Object:  StoredProcedure [dbo].[usp_addProductCategory]    Script Date: 04-01-2017 15:44:27 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[usp_addProductCategory]
+@name varchar(100),
+@description varchar(250)
+AS
+BEGIN
+	INSERT INTO ProductCategories(Name,Description)
+	VALUES(@name, @description)
+END
+
+
+GO
+
+
+
+
+
 
