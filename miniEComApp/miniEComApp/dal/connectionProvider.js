@@ -1,9 +1,8 @@
 var sql = require('mssql');
 var path = require('path');
-var constants = require('./utility/constants/constants.js')
 var connectionConfig = require(path.resolve(__dirname + '/connectionConfig.js'));
 
-console.log(constants);
+
 var connection;
 
 var connectionProvider = {

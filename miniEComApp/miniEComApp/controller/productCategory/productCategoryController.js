@@ -16,7 +16,10 @@ module.exports={
         });
     },
     addCategory: function(request,response){
-        
+        var prodcutCategoryModel = request.productCategoryModel;
+        productCategoryService.addCategory(prodcutCategoryModel, function(){
+            var test = '';
+        })
     }
 }
 

@@ -1,5 +1,7 @@
 var sql = require('mssql');
 var connectionProvider = require('../connectionProvider.js').connectionProvider;
+var path = require('path');
+var constants = require(path.join(path.resolve(__dirname),'../../utility/constants/constants.js'));
 
 var sqlInputParams=[];
 var param = {
@@ -10,11 +12,6 @@ var param = {
 module.exports = {
 
     getProductCategories: function (successCallback) {
-        // param.parameterName='id';
-        // param.dataType=sql.Int,
-        // param.dataValue=5;
-        // sqlInputParams.push(param);
-        // connectionProvider.executeProcedure('[dbo].[usp_getCategories]', sqlInputParams,null,successCallback,null);
         connectionProvider.executeQuery('SELECT * FROM [ProductCategories]', null, successCallback, null);
     },
     addProductCategory: function(productCategoryModel, successCallback){
@@ -22,6 +19,7 @@ module.exports = {
         param.dataType=sql.VarChar(100),
         param.dataValue=5;
         sqlInputParams.push(param);
-        connectionProvider.executeProcedure('[dbo].[usp_getCategories]', sqlInputParams,null,successCallback,null);
+        
+         connectionProvider.executeProcedure(constants.storedProcedure.productCategory.ADD_PRODUCT_CATEGORY, sqlInputParams,null,successCallback,null);
     }
 }

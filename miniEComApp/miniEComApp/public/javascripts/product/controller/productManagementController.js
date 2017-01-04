@@ -9,7 +9,9 @@ var productCategoryController = function($scope,$http){
     };
 
     $scope.addProductCategory = function(){
-        $http.post('/Categories/Add/PostData', $scope.new.productCategory).then(addSuccessCallback,addFailureCallback);
+        debugger;
+        productService.addProductCategory($scope.new.productCategory, addSuccessCallback,addFailureCallback);
+        //$http.post('/Categories/Add/PostData', $scope.new.productCategory).then(addSuccessCallback,addFailureCallback);
         $scope.new.productCategory={};
     }
     
@@ -30,12 +32,9 @@ var productCategoryController = function($scope,$http){
 }
 
 var productCategoryGridController = function($scope, $http, productService){
-    debugger;
     var productCategories = productService.getProductCategoryData(function(categories){
         $scope.productCategories = categories;
     });
-    //$scope.productCategories=productService.productCategories;
-
 }
 
 

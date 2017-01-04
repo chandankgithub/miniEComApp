@@ -14,15 +14,18 @@ productModule.factory('productService', ['$http',function($http) {
 
        getProductCategoryData: function(callback){
            $http.get('/CategoryList').then(function(result){
-               debugger;
                callback(result.data.productCategories);
            }).catch(function(error){
                 console.log(error);
            });
        },
 
-       addProductCategory: function (productCategory){
-           productCategories.push(productCategory);
+       addProductCategory: function (productCategory, successCallback, failureCallback){
+           $http.post('/Categories/Add/PostData', $scope.new.productCategory).then( function(result){
+               successCallback(result.data);
+           }, function(error){
+                failureCallback(error);
+           });
        }
     };
 }])
