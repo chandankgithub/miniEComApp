@@ -1,7 +1,7 @@
 ﻿<% include ../../layout %>
 
 <script src="../../javascripts/product/controller/productManagementController.js"></script>
-
+<script src="../../javascripts/product/services/productService.js"></script>
 
 
 <div class="panel panel-primary" ng-controller="productCategoryController">
@@ -16,7 +16,7 @@
                     <span class="input-group-addon">
                        <strong>Category Name</strong> 
                     </span>
-                    <input type="text" class="form-control" placeholder="Product Category Name" ng-model="new.productCategory.Name">
+                    <input type="text" class="form-control" placeholder="Product Category Name" ng-model="new.productCategory.name">
                 </div>
             </div>
              <div class="row">
@@ -24,7 +24,7 @@
                     <span class="input-group-addon">
                        <strong>Description</strong> 
                     </span>
-                    <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Product Category Description"  ng-model="new.productCategory.Description"></textarea>
+                    <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Product Category Description"  ng-model="new.productCategory.description"></textarea>
                 </div>
             </div>
             <div class="row">

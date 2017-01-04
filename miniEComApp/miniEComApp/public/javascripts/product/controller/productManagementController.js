@@ -1,10 +1,10 @@
 var productModule = angular.module('productModule' ,[]);
 
-var productCategoryController = function($scope,$http){
+var productCategoryController = function($scope,$http, productService){
     $scope.new  = {
        productCategory:{
-           Name:'',
-           Description:''
+           name:'',
+           description:''
        }
     };
 
@@ -17,6 +17,7 @@ var productCategoryController = function($scope,$http){
     
     var addSuccessCallback = function(result){
        //$scope.productCategories.push(result.data);
+       debugger;
        window.location = '/Categories';
     }
 
@@ -68,7 +69,7 @@ var productListingController = function($scope, $http){
 
 
 //Dependency Injection to Controller
-productCategoryController.$inject = ['$scope','$http'];
+productCategoryController.$inject = ['$scope','$http','productService'];
 productCategoryListingController.$inject = ['$scope','$http','productService'];
 productCategoryGridController.$inject = ['$scope','$http','productService'];
 

@@ -21,7 +21,7 @@ productModule.factory('productService', ['$http',function($http) {
        },
 
        addProductCategory: function (productCategory, successCallback, failureCallback){
-           $http.post('/Categories/Add/PostData', $scope.new.productCategory).then( function(result){
+           $http.post('/Categories/Add/PostData', productCategory).then( function(result){
                successCallback(result.data);
            }, function(error){
                 failureCallback(error);

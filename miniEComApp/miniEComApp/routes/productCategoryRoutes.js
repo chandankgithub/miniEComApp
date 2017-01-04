@@ -52,7 +52,7 @@ var productCategoryRoutes = function (app) {
                 //         'Description': request.body.Description
                 //     }));
                 // //response.redirect('/Categories');
-                productCategoryController.addCategory(request,response);
+                productCategoryController.addProductCategory(request,response);
             }
         });
     }

@@ -15,10 +15,10 @@ module.exports={
             response.json({productCategories: recordset});
         });
     },
-    addCategory: function(request,response){
-        var prodcutCategoryModel = request.productCategoryModel;
-        productCategoryService.addCategory(prodcutCategoryModel, function(){
-            var test = '';
+    addProductCategory: function(request,response){
+        var prodcutCategoryModel = request.body;
+        productCategoryService.addProductCategory(prodcutCategoryModel, function(){
+            response.json({Status: 'OK'});
         })
     }
 }

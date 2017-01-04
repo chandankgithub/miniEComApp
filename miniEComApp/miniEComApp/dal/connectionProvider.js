@@ -10,7 +10,8 @@ var connectionProvider = {
     getConnection: function () {
 
         if (connection === undefined || (connection && !connection.connected)) {
-            connection = new sql.Connection(connectionConfig.connectionString.dev);
+            //connection = new sql.Connection(connectionConfig.connectionString.dev);
+            connection = new sql.Connection(connectionConfig.connectionString.home);
         }
         return connection;
     },
@@ -43,23 +44,16 @@ var connectionProvider = {
             });
     },
     executeProcedure: function (spName, sqlInputParams, sqlOutputParams, successCallback, failureCallback) {
-        //     new sql.Request();
-        // .input('input_parameter', sql.Int, value);
-        // .output('output_parameter', sql.VarChar(50));
-        // .execute('procedure_name').then(function(recordsets) {
-        //     console.dir(recordsets);
-        // }).catch(function(err) {
-        //     // ... error checks 
-        // });
+        
         var self = this;
         connection = self.getConnection();
         connection.connect()
             .then(function () {
                 var request = new sql.Request(connection);
                 
-                // sqlInputParams.forEach(function(param){
-                //         request.input(param.parameterName, param.dataType, param.dataValue);
-                // });
+                sqlInputParams.forEach(function(param){
+                        request.input(param.parameterName, param.dataType, param.dataValue);
+                });
 
                 // sqlOutputParams.forEach(function(param){
                 //         request.output(param.parameterName, param.dataType);

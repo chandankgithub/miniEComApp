@@ -15,10 +15,10 @@ module.exports = {
         connectionProvider.executeQuery('SELECT * FROM [ProductCategories]', null, successCallback, null);
     },
     addProductCategory: function(productCategoryModel, successCallback){
-        param.parameterName='name';
-        param.dataType=sql.VarChar(100),
-        param.dataValue=5;
-        sqlInputParams.push(param);
+        sqlInputParams =[];
+
+        sqlInputParams.push({ parameterName:'name', dataType: sql.VarChar(100), dataValue: productCategoryModel.name});
+        sqlInputParams.push({ parameterName:'description', dataType: sql.VarChar(250), dataValue: productCategoryModel.description});
         
          connectionProvider.executeProcedure(constants.storedProcedure.productCategory.ADD_PRODUCT_CATEGORY, sqlInputParams,null,successCallback,null);
     }
