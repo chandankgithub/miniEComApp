@@ -1,4 +1,4 @@
-var productRepo = require('../dal/productRepository.js');
+var productRepo = require('../../dal/product/productRepository.js');
 
 module.exports = {
 

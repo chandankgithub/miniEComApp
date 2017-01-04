@@ -1,4 +1,4 @@
-var productCategoryService = require('../../services/productCategoryService.js');
+var productCategoryService = require('../../services/product/productCategoryService.js');
 
 const productModuleRootPath = "admin/product/";
 
