@@ -1,5 +1,6 @@
 var productRoutes = function(app){
 
+    const productModuleRootPath = "admin/product/"
     var self = this;
     self.routeCollection = [];
     self.app = app;
@@ -16,7 +17,7 @@ var productRoutes = function(app){
             requestType:'GET',
             requestUrl:'/Products',
             callback: function(request, response){
-                response.render('productListing', {'title': 'Products'});
+                response.render(productModuleRootPath + 'productListing', {'title': 'Products'});
             }
         });
 
@@ -24,7 +25,7 @@ var productRoutes = function(app){
             requestType:'GET',
             requestUrl:'/Products/Edit',
             callback: function(request, response){
-                response.render('productEdit', {'title': 'Product Add-Edit'});
+                response.render(productModuleRootPath + 'productEdit', {'title': 'Product Add-Edit'});
             }
         });
 
