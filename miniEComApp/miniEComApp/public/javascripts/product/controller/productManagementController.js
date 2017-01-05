@@ -7,7 +7,9 @@ var productCategoryController = function($scope,$http, productService){
            description:''
        }
     };
-
+    var init =function (){
+        
+    }
     $scope.addProductCategory = function(){
         debugger;
         productService.addProductCategory($scope.new.productCategory, addSuccessCallback,addFailureCallback);

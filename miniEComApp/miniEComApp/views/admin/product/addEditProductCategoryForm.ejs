@@ -1,0 +1,35 @@
+<div class="container" ng-controller="productCategoryController">
+        <form class="form-group form-group-sm col-xs-6" id="productCategoryForm">
+            <div class="row">
+                <div class="input-group input-group-md">
+                    <span class="input-group-addon">
+                       <strong>Category Name</strong> 
+                    </span>
+                    <input type="text" class="form-control" placeholder="Product Category Name" ng-model="new.productCategory.name">
+                </div>
+            </div>
+             <div class="row">
+                <div class="input-group input-group-md">
+                    <span class="input-group-addon">
+                       <strong>Description</strong> 
+                    </span>
+                    <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Product Category Description"  ng-model="new.productCategory.description"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                &nbsp;
+            </div>
+            <!-- Button Controls-->
+
+             <div class="row">
+                 <div class="input-group-md"> 
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-primary btn-md" ng-click="addProductCategory()">Save</button>
+                        <button type="button" class="btn btn-primary">Cancel</button>
+                    </div>
+                 </div>
+                
+            </div>
+
+        </form>
+    </div>
