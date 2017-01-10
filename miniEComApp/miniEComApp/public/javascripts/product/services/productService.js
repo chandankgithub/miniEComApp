@@ -26,6 +26,14 @@ productModule.factory('productService', ['$http',function($http) {
            }, function(error){
                 failureCallback(error);
            });
+       },
+
+       addNewProduct: function(newProduct, successCallback, failureCallback){
+            $http.post('/Products/Edit/PostData', newProduct).then( function(result) {
+                successCallback(result);
+            }, function(error) {
+                console.log(error);
+            });
        }
     };
 }])

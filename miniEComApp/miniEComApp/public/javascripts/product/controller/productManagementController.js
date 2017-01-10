@@ -9,7 +9,6 @@ var productCategoryController = function($scope,$http, productService){
     };
 
     $scope.addProductCategory = function(){
-        debugger;
         productService.addProductCategory($scope.new.productCategory, addSuccessCallback,addFailureCallback);
         //$http.post('/Categories/Add/PostData', $scope.new.productCategory).then(addSuccessCallback,addFailureCallback);
         $scope.new.productCategory={};
@@ -17,7 +16,6 @@ var productCategoryController = function($scope,$http, productService){
     
     var addSuccessCallback = function(result){
        //$scope.productCategories.push(result.data);
-       debugger;
        window.location = '/Categories';
     }
 
@@ -39,23 +37,21 @@ var productCategoryGridController = function($scope, $http, productService){
 }
 
 
-var productController = function($scope, $http){
+var productController = function($scope, $http, productService){
     
     var self = this;
 
-    self.new ={
+    $scope.new={
         product:{
-            name: '',
-            description: ''
+            name:'',
+            description:''
         }
-        
     }
-    $scope.addProduct = function(){
-
-        $http.post('/Products/Edit/PostData', self.new.product).then(self.addSuccessCallback,self.addFailureCallback);
+    $scope.addNewProduct = function(){
+        productService.addNewProduct($scope.new.product, self.addSuccessCallback, self.addFailureCallback)
     }
     self.addSuccessCallback = function(result){
-        console.log(result.data);
+        window.location = '/Products';
     }
 
     self.addFailureCallback = function(error){
@@ -73,7 +69,7 @@ productCategoryController.$inject = ['$scope','$http','productService'];
 productCategoryListingController.$inject = ['$scope','$http','productService'];
 productCategoryGridController.$inject = ['$scope','$http','productService'];
 
-productController.$inject = ['$scope','$http'];
+productController.$inject = ['$scope','$http', 'productService'];
 productListingController.$inject = ['$scope','$http'];
 
 //Controller declarations

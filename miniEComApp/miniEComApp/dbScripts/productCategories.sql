@@ -56,6 +56,27 @@ END
 
 GO
 
+USE [miniEcom]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_addProductCategory]    Script Date: 1/10/2017 10:11:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create PROCEDURE [dbo].[usp_addNewProduct]
+@name varchar(100),
+@description varchar(250)
+AS
+BEGIN
+	INSERT INTO Products(Name,[Description])
+	VALUES(@name, @description)
+END
+
+
+
+
+
+
 
 
 

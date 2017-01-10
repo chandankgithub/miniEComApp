@@ -1,5 +1,6 @@
 <% include layout %>
 <script src="../../javascripts/product/controller/productManagementController.js"></script>
+<script src="../../javascripts/product/services/productService.js"></script>
 <div class="panel panel-primary" ng-controller="productController">
     <div class="panel-heading">
         <h3 class="panel-title">
@@ -27,7 +28,7 @@
                 <div class="row">
                     <div class="input-group-md">
                         <div class="form-buttons">
-                            <button type="button" class="btn btn-primary" ng-click="addProduct()">Save</button>
+                            <button type="button" class="btn btn-primary" ng-click="addNewProduct()">Save</button>
                             <button type="button" class="btn btn-primary">Cancel</button>
                         </div>
                     </div>

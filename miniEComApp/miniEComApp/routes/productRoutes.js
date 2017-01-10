@@ -1,3 +1,4 @@
+var productController = require('../controller/product/productController.js').productController;
 var productRoutes = function(app){
 
     var self = this;
@@ -16,7 +17,8 @@ var productRoutes = function(app){
             requestType:'GET',
             requestUrl:'/Products',
             callback: function(request, response){
-                response.render('productListing', {'title': 'Products'});
+                // response.render('productListing', {'title': 'Products'});
+                productController.getProductListView(request, response);
             }
         });
 
@@ -25,6 +27,8 @@ var productRoutes = function(app){
             requestUrl:'/Products/Edit',
             callback: function(request, response){
                 response.render('productEdit', {'title': 'Product Add-Edit'});
+                // productController.addNewProduct(request, response);
+                // response.render('productEdit', {'title': 'Product Add-Edit'});
             }
         });
 
@@ -32,12 +36,7 @@ var productRoutes = function(app){
             requestType:'POST',
             requestUrl:'/Products/Edit/PostData',
             callback: function(request, response){
-                 console.log(request.body);
-                return response.send(JSON.stringify(
-                    {
-                        'Name' : request.body.Name,
-                        'Description': request.body.Description
-                    }));
+                productController.addNewProduct(request, response);
             }
         });
     };
