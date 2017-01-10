@@ -10,8 +10,8 @@ var connectionProvider = {
     getConnection: function () {
 
         if (connection === undefined || (connection && !connection.connected)) {
-            //connection = new sql.Connection(connectionConfig.connectionString.dev);
-            connection = new sql.Connection(connectionConfig.connectionString.home);
+            connection = new sql.Connection(connectionConfig.connectionString.dev);
+            //connection = new sql.Connection(connectionConfig.connectionString.home);
         }
         return connection;
     },

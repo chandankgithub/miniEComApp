@@ -40,6 +40,15 @@ var productCategoryRoutes = function (app) {
                 response.render(productModuleRootPath + 'addEditProductCategory', { title: 'Add Product Category' })
             }
         });
+
+        self.routeCollection.push({
+            requestUrl: '/Categories/Add/{id}',
+            requestType: 'GET',
+            callback: function (request, response) {
+                response.render(productModuleRootPath + 'addEditProductCategory', { title: 'Add Product Category' })
+            }
+        });
+
          self.routeCollection.push({
             requestUrl: '/Categories/Add/PostData',
             requestType: 'POST',
