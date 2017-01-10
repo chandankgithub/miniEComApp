@@ -27,9 +27,7 @@ var productRoutes = function(app){
             requestType:'GET',
             requestUrl:'/Products/Edit',
             callback: function(request, response){
-                response.render('productEdit', {'title': 'Product Add-Edit'});
-                // productController.addNewProduct(request, response);
-                // response.render('productEdit', {'title': 'Product Add-Edit'});
+                productController.getProductEditView(request, response);
             }
         });
 

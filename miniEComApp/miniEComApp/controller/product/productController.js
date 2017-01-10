@@ -1,9 +1,16 @@
 var productService = require('../../services/product/productService.js').productService;
 
+const productModuleRootPath = "admin/product/";
+
 var productController = {
     getProductListView: function(request,response){
-        response.render('productListing', {'title': 'Products'});
+        response.render(productModuleRootPath + 'productListing', {'title': 'Products'});
     },
+
+    getProductEditView : function(request, response){
+        response.render(productModuleRootPath + 'productEdit', {'title': 'Product Add-Edit'});
+    },
+
     addNewProduct: function(request, response){
         var productModel = request.body;
         productService.addNewProduct(productModel, function(result){
