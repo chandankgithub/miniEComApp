@@ -1,6 +1,7 @@
 var productController = require('../controller/product/productController.js').productController;
 var productRoutes = function(app){
 
+    const productModuleRootPath = "admin/product/"
     var self = this;
     self.routeCollection = [];
     self.app = app;
