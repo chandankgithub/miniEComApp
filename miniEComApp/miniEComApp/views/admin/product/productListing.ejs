@@ -1,24 +1,11 @@
 <% include ../../layout %>
 <script src="../../javascripts/product/controller/productManagementController.js"></script>
 
-<div class="panel panel-primary" ng-controller="productListingController"> 
+<div class="panel panel-primary"> 
     <div class="panel-heading"> 
         <h3 class="panel-title">Product Listing</h3>
     </div>
     <div class="panel-body">
-        <table class="table table-stripped table-hover">
-            <thead>
-                <td>Name</td>
-                <td>Description</td>
-                <td>Actions</td>
-            </thead>
-            <tbody>
-                <tr ng-repeat="product in products">
-                    <td>{{product.Name}}</td>
-                    <td>{{product.Description}}</td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+        <%include productListingGrid%>
     </div>
 </div>

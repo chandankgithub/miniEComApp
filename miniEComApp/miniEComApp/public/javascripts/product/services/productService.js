@@ -34,6 +34,16 @@ productModule.factory('productService', ['$http',function($http) {
             }, function(error) {
                 console.log(error);
             });
+       },
+
+       getProductList: function(successCallback, failureCallback){
+           $http.get('/Product/ListAll').then(function(result){
+               debugger;
+               successCallback(result.data.productList);
+           },
+           function(error){
+               failureCallback(error);
+           })
        }
     };
 }])

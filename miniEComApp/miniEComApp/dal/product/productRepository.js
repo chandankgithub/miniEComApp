@@ -14,6 +14,9 @@ module.exports = {
     getProductCategories: function (successCallback) {
         connectionProvider.executeQuery('SELECT * FROM [ProductCategories]', null, successCallback, null);
     },
+    getProductListData: function (successCallback, failureCallback) {
+        connectionProvider.executeQuery('SELECT * FROM [Products]', null, successCallback, null);
+    },
     addProductCategory: function(productCategoryModel, successCallback){
         sqlInputParams =[];
 

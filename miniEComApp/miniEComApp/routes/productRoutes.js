@@ -38,6 +38,14 @@ var productRoutes = function(app){
                 productController.addNewProduct(request, response);
             }
         });
+
+        self.routeCollection.push({
+            requestType:'GET',
+            requestUrl:'/Product/ListAll',
+            callback: function(request, response){
+                productController.getProductListData(request, response);
+            }
+        });
     };
 
     self.processRoutes = function(){

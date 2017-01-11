@@ -3,6 +3,12 @@ var productService = require('../../services/product/productService.js').product
 const productModuleRootPath = "admin/product/";
 
 var productController = {
+    getProductListData: function(request,response){
+        productService.getProductListData(function(recordsets){
+            response.json({productList: recordsets});
+        })
+    },
+    
     getProductListView: function(request,response){
         response.render(productModuleRootPath + 'productListing', {'title': 'Products'});
     },

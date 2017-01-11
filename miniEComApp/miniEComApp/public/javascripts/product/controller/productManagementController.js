@@ -64,6 +64,15 @@ var productListingController = function($scope, $http){
 
 }
 
+var productListingGridController = function($scope,productService){
+    debugger;
+    productService.getProductList(function(products){
+        $scope.products = products;
+    }, function(error){
+        console.log(error);
+    });
+}
+
 
 
 //Dependency Injection to Controller
@@ -73,10 +82,12 @@ productCategoryGridController.$inject = ['$scope','$http','productService'];
 
 productController.$inject = ['$scope','$http', 'productService'];
 productListingController.$inject = ['$scope','$http'];
+productListingGridController.$inject = ['$scope', 'productService'];
 
 //Controller declarations
 productModule.controller('productCategoryController', productCategoryController)
              .controller('productCategoryListingController', productCategoryListingController)
              .controller('productCategoryGridController', productCategoryGridController)
              .controller('productController', productController)
-             .controller('productListingController', productListingController);
+             .controller('productListingController', productListingController)
+             .controller('productListingGridController', productListingGridController);

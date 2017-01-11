@@ -1,0 +1,17 @@
+<script src="../../javascripts/product/services/productService.js"></script>
+<div ng-controller="productListingGridController">
+    <table class="table table-stripped table-hover">
+        <thead>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Actions</td>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in products">
+                <td>{{product.Name}}</td>
+                <td>{{product.Description}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
