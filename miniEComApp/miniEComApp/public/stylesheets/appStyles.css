@@ -1,4 +1,4 @@
-#productCategoryForm .input-group-addon {
+#productCategoryForm, #loginForm .input-group-addon {
     min-width:150px;
     text-align:left;
 }
