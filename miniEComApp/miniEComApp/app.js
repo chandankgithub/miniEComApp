@@ -9,6 +9,7 @@ var http = require('http');
 var path = require('path');
 var productCategoryRoute = require('./routes/productCategoryRoutes.js');
 var productsRoute = require('./routes/productRoutes.js');
+var loginRoutes = require('./routes/loginRoutes.js');
 
 var app = express();
 
@@ -31,9 +32,11 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+//app.get('/', routes.login);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
 
+new loginRoutes(app);
 new productCategoryRoute(app);
 new productsRoute(app);
 
